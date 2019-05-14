@@ -56,4 +56,31 @@ class User extends CI_Controller{
     $data['lionel'] = $this->Muser->listUser();
     $this->load->view("user/list_view", $data);
   }
+  // Để có thể nắm bắt và hình dung được cách xử lý database trong CI các bạn cần lưu ý các vấn đề sau giúp tôi.
+  // - Trong bất kì controller không được tạo action có tên là list, nó ứng với core system của CI.
+  // - Thực thi câu truy vấn:
+  // $this->db->query()
+  // - Đếm số record:
+  // $this->db->num_rows()
+  // - Lấy tất cả record:
+  // $this->db->result_array()
+  // - Lấy 1 dòng record:
+  // $this->db->row_array()
+  // Active Record:
+  // - Thực thi câu truy vấn:
+  // $this->db->get("table")
+  // - Liệt kê những cột muốn hiển thị:
+  // $this->db->select("cols1", "cols2")
+  // - Sắp xếp kết quả:
+  // $this->db->order_by("id desc")
+  // - Giới hạn kết quả:
+  // $this->db->limit(7, 0)
+  // - Liệt kê dữ liệu với điều kiện:
+  // $this->db->where("cols", "var")
+  // - Thêm record:
+  // $this->db->insert("table", $tenbien)
+  // - Sửa record:
+  // $this->db->update("table", $tenbien)
+  // - Xóa record:
+  // $this->db->delete("table")
 }
