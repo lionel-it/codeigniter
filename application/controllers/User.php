@@ -51,4 +51,9 @@ class User extends CI_Controller{
         echo "Xoa that bai";
     }
   }
+  public function index5(){
+    $this->load->model("Muser");
+    $data['lionel'] = $this->Muser->listUser();
+    $this->load->view("user/list_view", $data);
+  }
 }
