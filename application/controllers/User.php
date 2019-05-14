@@ -12,18 +12,11 @@ class User extends CI_Controller{
     // print_r($data);
     // echo "</pre>";
     $query = $this->db->get("user");
-    // $data = $query->result_array();
-    $data = $query->row_array();
+    $this->db->select("id, username, level");
+    $query=$this->db->get("user");
+    $data=$query->result_array();
     echo "<pre>";
     print_r($data);
     echo "</pre>";
-    // Nó lấy ID đầu tiên
-    // tôi sẽ liệt kê một số phương thức mà chung ta hay dùng để xây dựng ứng dụng website.
-    // $this->db->limit();
-    // $this->db->select();
-    // $this->db->join();
-    // $this->db->like();
-    // $this->db->select_min();
-    // $this->db->select_max();
   }
 }
