@@ -3,23 +3,32 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 class Demo extends CI_Controller{
     public function __construct(){
         parent::__construct();
+        $ip = $this->load->helper("url");
         $this->load->library("session");
-        // $data=array(
-        //     "username" => "Kaito",
-        //     "email" => "codephp2013@gmail.com",
-        //     "website" => "freetuts.net",
-        //     "gender" => "Male",
-        // );
-        // $this->session->set_userdata($data);
     }
     public function index(){
-        // echo $this->session->userdata("username");
-        $items = array('username','email','website');
-        $this->session->unset_userdata($items);
-        // $this->session->sess_destroy();
-        echo '<hr/>';
-        echo "Sau khi đã hủy";
-        echo '<hr/>';
-        echo $this->session->userdata("username");
+        $data=array(
+            "username" => "Kaito",
+            "email" => "codephp2013@gmail.com",
+            "website" => "freetuts.net",
+            "gender" => "Male",
+        );
+        $this->session->set_userdata($data);
+        redirect(base_url() . "demo/index2");
+    }
+    public function index2(){
+        $user=$this->session->userdata("username");
+        $email=$this->session->userdata("email");
+        $website=$this->session->userdata("website");
+        echo "Username: $user ";
+        echo "<hr/>";
+        echo "Email: $email";
+        echo "<hr/>";
+        echo "Level: $website";
+        $data=$this->session->all_userdata();
+        echo "<hr/>";
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";  
     }
 }
