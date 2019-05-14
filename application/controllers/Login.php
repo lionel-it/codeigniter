@@ -14,6 +14,7 @@ class Login extends CI_Controller
   
         // Load view và truyền data qua view
         $this->load->view('login_view', $data);
+        // $this->load->database();
     }
 }
 // Bạn ra trình duyệt gõ URL  http://localhost/ubuntu/codeIgniteronce/login/load_form
