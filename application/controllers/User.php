@@ -11,8 +11,8 @@ class User extends CI_Controller{
     // echo "<pre>";
     // print_r($data);
     // echo "</pre>";
-    $query = $this->db->get("user");
     $this->db->select("id, username, level");
+    $this->db->order_by("id", "desc");
     $query=$this->db->get("user");
     $data=$query->result_array();
     echo "<pre>";
