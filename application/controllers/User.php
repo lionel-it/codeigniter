@@ -12,9 +12,11 @@ class User extends CI_Controller{
     // print_r($data);
     // echo "</pre>";
     $query = $this->db->get("user");
-    $data = $query->result_array();
+    // $data = $query->result_array();
+    $data = $query->row_array();
     echo "<pre>";
     print_r($data);
     echo "</pre>";
+    // Nó lấy ID đầu tiên
   }
 }
