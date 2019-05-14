@@ -31,4 +31,8 @@ class Demo extends CI_Controller{
         print_r($data);
         echo "</pre>";  
     }
+    public function index3(){
+        $this->session->sess_destroy();
+        echo "Huy session thanh cong.";
+    }
 }
