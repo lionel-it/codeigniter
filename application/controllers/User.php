@@ -6,19 +6,20 @@ class User extends CI_Controller{
       $this->load->database();
   }
   public function index(){
-    // $query = $this->db->query("SELECT * FROM user order By id");
-    // $data = $query->result_array();
-    // echo "<pre>";
-    // print_r($data);
-    // echo "</pre>";
+    // SELECT MIN(id) as id FROM user
+    // SELECT MAX(id) as id FROM user
+    // Active Record
+    // $this->db->select_min()
+    // $this->db->select_max();
     $this->db->select("id, username, level");
-    $this->db->order_by("id", "desc");
-    $this->db->limit(7, 0);
-    $this->db->where("level", "2");
-    $query=$this->db->get("user");
-    $data=$query->result_array();
-    echo "<pre>";
-    print_r($data);
-    echo "</pre>";
+      $this->db->order_by("id", "desc");
+      $this->db->limit(7, 0);
+      $this->db->where("level", "2");
+      $this->db->select_min("id");
+      $query=$this->db->get("user");
+      $data=$query->result_array();
+      echo "<pre>";
+      print_r($data);
+      echo "</pre>";
   }
 }
