@@ -22,4 +22,33 @@ class User extends CI_Controller{
       print_r($data);
       echo "</pre>";
   }
+  public function index2(){
+    $data=array(
+      "username" => "kaito",
+      "password" => "1212445",
+      "level"    => "2",
+    );
+    $this->db->insert("user", $data);     
+  }
+  public function index3(){
+    $data=array(
+        "username" => "kaito",
+        "password" => "123456",
+        "level"    => "1",
+    );
+    $this->db->where("id", "5");
+    if($this->db->update("user", $data)){
+        echo "Update Thanh cong";
+    }else{
+        echo "Update That bai";
+    }     
+  }
+  public function index4(){
+    $this->db->where("id", "5");
+    if($this->db->delete("user")){
+        echo "Xoa thanh cong";
+    }else{
+        echo "Xoa that bai";
+    }
+  }
 }
