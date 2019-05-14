@@ -10,3 +10,4 @@ class Login extends CI_Controller
         $this->load->view('login_view');
     }
 }
+// Bạn ra trình duyệt gõ URL  http://localhost/ubuntu/codeIgniteronce/login/load_form
