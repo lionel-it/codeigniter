@@ -13,6 +13,7 @@ class User extends CI_Controller{
     // echo "</pre>";
     $this->db->select("id, username, level");
     $this->db->order_by("id", "desc");
+    $this->db->limit(2, 0);
     $query=$this->db->get("user");
     $data=$query->result_array();
     echo "<pre>";
