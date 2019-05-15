@@ -66,4 +66,8 @@ class Shop extends CI_Controller{
       echo "Xoa san pham that bai";
     }
   }
+  public function del(){
+    $this->cart->destroy();
+    echo "Done";
+  }
 }
