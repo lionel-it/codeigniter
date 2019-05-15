@@ -10,16 +10,16 @@ $upload=array(
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Freetuts.net</title>
 </head>
- 
+  
 <body>
-  <?php
-      if($errors != ""){
-          echo $errors;
-      }
-      echo form_open_multipart(base_url()."upload/doupload");
+    <?php
+        if($errors != ""){
+            echo $errors;
+        }
+        echo form_open_multipart(base_url()."upload/doupload");
         echo form_label("Avartar: ").form_upload($upload)."<br />";
         echo form_label(" ").form_submit("ok", "Upload");
-      echo form_close();
-  ?>
+        echo form_close();
+    ?>
 </body>
 </html>
