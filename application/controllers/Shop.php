@@ -70,4 +70,21 @@ class Shop extends CI_Controller{
     $this->cart->destroy();
     echo "Done";
   }
+  public function update(){
+    $data=$this->cart->contents();
+    foreach($data as $item){
+      if($item['id'] == "2"){
+        $item['qty'] = 10;
+        $update = array(
+          "rowid" => $item['rowid'], 
+          "qty" => $item['qty']
+        );
+      }
+    }
+    if($this->cart->update($update)){
+        echo "Update san pham thanh cong";
+    }else{
+        echo "Update san pham that bai";
+    }
+  }
 }
