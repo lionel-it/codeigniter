@@ -53,5 +53,6 @@ $note=array(
     echo form_fieldset_close();
   echo form_close();
  ?>
+ <!-- Nói việt hóa cho nó sang chứ thật ra là sửa code trong phần system của nó, rất là đơn giản, ngay tại folder system các bạn tìm đến folder language mở nó ra thấy ngay file form_validation_lang.php -->
 </body>
 </html>
