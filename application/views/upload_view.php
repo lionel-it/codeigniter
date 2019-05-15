@@ -12,6 +12,20 @@ $upload=array(
 </head>
   
 <body>
+    <?php 
+      $this->load->helper("text");
+      $string = "Day la vi du ve word_limiter"; 
+      $string = word_limiter($string, 4);
+      // echo $string; // Day la vi du…
+      $string = "Day la vi du ve character_limiter"; 
+      $string = character_limiter($string, 9);
+      // echo $string; Day la vi…
+      $string = "Got damn it shit";
+      $badword = array('damn', 'fuck', 'shit', 'funny');
+      // echo $string = word_censor($string, $badword, '***'); //Got *** it ***
+      $string = "Freetuts.net la website chia se kinh nghiem lap trinh";
+      echo $string = highlight_phrase($string, "Freetuts.net", "<span style='color:red;'>", "</span>");
+    ?>
     <?php
         if($errors != ""){
             echo $errors;
