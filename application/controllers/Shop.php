@@ -87,4 +87,10 @@ class Shop extends CI_Controller{
         echo "Update san pham that bai";
     }
   }
+  public function total(){
+    echo 'Hien tai co '.$this->cart->total_items().' san pham trong gio hang';
+  }
+  public function totalmoney(){
+    echo 'Tong tien '.$this->cart->total().'$ trong gio hang';
+  }
 }
