@@ -40,8 +40,9 @@ $note=array(
    
 <body>
  <?php
-    echo form_open(base_url()."form/index");
-      echo form_fieldset("Member Register");
+  echo validation_errors();
+  echo form_open(base_url()."index.php/form/index");
+    echo form_fieldset("Member Register");
       echo form_label("Fullname: ").form_input($user)."<br />";
       echo form_label("Password: ").form_password($pass)."<br />";
       echo form_label("Email: ").form_input($email)."<br />";
@@ -49,8 +50,8 @@ $note=array(
       echo form_label("Country: ").form_dropdown("Country: ", $opt, 1)."<br />";
       echo form_label("Note: ").form_textarea($note)."<br />";
       echo form_label(" ").form_submit("ok",  "Register");
-      echo form_fieldset_close();
-    echo form_close();
+    echo form_fieldset_close();
+  echo form_close();
  ?>
 </body>
 </html>
