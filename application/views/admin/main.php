@@ -12,10 +12,14 @@
 </style>
 </head>
 <body>
-    <div id="top"><?php echo $title; ?></div>
-    <div id="content">
-        <?php echo $subview; ?>
-    </div>
-    <div id="footer"><?php echo $footer; ?></div>
+    <h1>Category Controller - Action Add</h1>
+    <?php
+      echo "<pre>";
+      print_r($info);
+      echo "</pre>";
+      foreach($info as $k => $v){
+          echo "$k : $v<br />";
+      }
+    ?>
 </body>
 </html>
